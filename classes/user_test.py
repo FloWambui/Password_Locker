@@ -41,6 +41,19 @@ class TestUser(unittest.TestCase):
         self.new_user.delete_user()
         self.assertEqual(len(User.user_details), 0)
 
+    def test_find_user_by_username(self):
+        """
+        Test to check if a user by username
+        """
+
+        self.found_user = User.find_by_username("FloWambui")
+
+    def test_user_exist(self):
+        """
+        Test to check whether a user exists in the list
+        """
+
+        self.found_user = User.user_exist("FloWambui")
 
 if __name__ == '__main__':
     unittest.main()

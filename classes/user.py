@@ -30,3 +30,24 @@ class User:
 
         User.user_details.remove(self)
 
+    @classmethod
+    def find_by_username(cls,username):
+        """
+        Method that takes in the text and return a username matching that text
+        """
+
+        for user in cls.user_details:
+            if user.username == username:
+                return user
+
+    @classmethod
+    def user_exist(cls,username):
+        """
+        Method to check existence of a username ftom the user list
+        """
+
+        for user in cls.user_details:
+            if user.username == username:
+                return True
+            return False
+
