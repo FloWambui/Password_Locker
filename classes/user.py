@@ -22,3 +22,11 @@ class User:
         """
 
         User.user_details.append(self)
+
+    def delete_user(self):
+        """
+        Deleting user from the list
+        """
+
+        User.user_details.remove(self)
+
