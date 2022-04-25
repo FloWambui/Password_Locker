@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.6
 
 from this import d
+from classes.credentials import Credentials
 from user import User
 
 def create_new_user(first_name, last_name, username, password):
@@ -33,6 +34,45 @@ def check_user_password(username, password):
     Function to check the user has entered the correct username and password
     """
     return User.check_user(username, password)
+
+# Credentials Instance
+
+def create_new_credential(account_name, user_name, account_password):
+    """
+    Function to create new credentials
+    """
+    new_credential = Credentials(account_name, user_name, account_password)
+    return new_credential
+
+def save_credentials(credentials):
+    """
+    Function to save credentials
+    """
+    credentials.save_credentials()
+
+def display_credentials():
+    """
+    Function to diasplay credentials
+    """
+    return Credentials.display_credentials()
+
+def delete_credentials(social_account):
+    """
+    Fucntion to delete credentials
+    """
+    return Credentials.delete_credentials(social_account)
+
+def find_credentials(user_account):
+    """
+    Function to find credential by ser account
+    """
+    return Credentials.find_by_social_account(user_account)
+
+def generate_password(password_lenght):
+    """
+    Function to generate random password
+    """
+    return Credentials.generate_password(password_lenght)
 
 
 def main():
