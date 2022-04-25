@@ -4,7 +4,7 @@ class User:
     """
     user_details = []
 
-    def _init_(self, first_name, last_name, username, password):
+    def __init__(self, first_name, last_name, username, password):
         """
         properties for the password lock object
         """
