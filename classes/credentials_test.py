@@ -35,3 +35,12 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(len(Credentials.user_credentials), 1)
         self.new_credentials.delete_credentials()
         self.assertEqual(len(Credentials.user_credentials), 0)
+
+    def test_find_credentials_by_social_account(self):
+        """
+        Test case to find credentials by social account
+        """
+        self.found_credentials = Credentials.find_by_social_account("Facebook")
+
+if __name__ == '__main__':
+    unittest.main()
