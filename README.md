@@ -7,7 +7,7 @@ Password Locker is a termnal based python app that allows a user to create a use
 
 ### Setup Requirements
 - Git
-- Python3
+- Python3.6
 - Pip
 
 ### Running Application
