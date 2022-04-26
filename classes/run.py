@@ -140,6 +140,40 @@ def main():
                             else:
                                 print("Invalid Entry")
 
+                            save_credentials(create_new_credential(account_name, user_name, account_password))
+                            print('\n')
+                            print(f'Credentials with account {account_name} and password {account_password} have been created \n')
+                            print('*'*10)
+                        elif log_choice ==2:
+                            print('\n')   
+                            print("List of all credentials in Password Locker App")
+                            print('*'*50)
+                            if display_credentials():
+                                print("f'{social_account}' Account, Username: '{user_acccount_username}' and password: '{user_account_password}' \n")
+                            else:
+                                print("No account saved")
+                            print('*'*50)
+                        elif log_choice ==3:
+                            print("Enter account name you would love to delete")
+                            account_name_to_delete = input()
+                            if find_credentials(account_name_to_delete):
+                                print(f"Credentials with account name '{account_name_to_delete}' has been deleted")
+                                print('\n')
+                            else:
+                                print('*'*50)
+                                print(f"Credential with account name '{account_name_to_delete}' do not exist")
+                                print('*'*50)
+                        elif log_choice == 4:
+                            print("You have successfully logged out")
+                            print('*'*50)
+                            break
+                        else:
+                            print("No such account exists")
+            else:
+                print("Invalid Entry")
+        elif short_code == 'ex':
+            print("Sad to see you go")                 
+
 
 
 
