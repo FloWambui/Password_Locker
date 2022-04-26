@@ -1,8 +1,7 @@
 #!/usr/bin/env python3.6
 
-from this import d
-from classes.credentials import Credentials
 from user import User
+from credentials import Credentials
 
 def create_new_user(first_name, last_name, username, password):
     """
@@ -29,11 +28,11 @@ def check_user(username):
     """
     return User.find_by_username(username)
 
-def check_user_password(username, password):
-    """
-    Function to check the user has entered the correct username and password
-    """
-    return User.check_user(username, password)
+# def check_user_password(username, password):
+#     """
+#     Function to check the user has entered the correct username and password
+#     """
+#     return User.user_exist(username, password)
 
 # Credentials Instance
 
@@ -109,16 +108,42 @@ def main():
             print("Enter your password....")
             password = input()
             if check_user(username):
-                if check_user_password(username, password):
+                if check_user(username):
                     print("\n")
                     print(f"Welcome back {username}")
                     print('*'*50)
                     while True:
                         print("Continue with the options below: \n")
-                        print("1. ")
+                        print("1. Create Credential \n2. View Credential\n3. Delete Credential\n4. Log Off ")
+                        print("\n")
+                        log_choice = int(input())
+                        if log_choice ==1:
+                            print("Enter the social account you want to Create ....Facebook, Behance, Twitter")
+                            account_name = input()
+                            print("Enter your social account username")
+                            user_name = input()
+                            print('\n')
+                            #Password generate
+                            print('*'*50)
+                            print("Generate Random Password?\n Enter 1 to generate randomn password\n Enter 2 to create own password")
+                            print('*'*10)
+                            print('\n')
+                            choice = int(input())
+                            if choice ==1:
+                                print("Choose Password Lenght")
+                                password_lenght = int(input())
+                                account_password = generate_password(password_lenght)
+                                print(f'Generated Password: {account_password}')
+                            elif choice ==2:
+                                print('Entwr Password of the social account')
+                                account_password = input()
+                            else:
+                                print("Invalid Entry")
+
+
+
 
 
 if __name__ == '__main__':
-
     main()
 
